@@ -3,9 +3,6 @@ import Order from "../modal/orderModal.js";
 
 const router = express.Router()
 
-
-
-
 router.post("/newOrder", async (req,res)=>{
     let { orderId,title,description } = req.body
 
@@ -26,6 +23,8 @@ router.get("/getSeveneDaysOrder", async (req, res) => {
 
         // Find orders created in the past 7 days
         const orders = await Order.find({ createdAt:{$lte: last7DaysDate}  });
+
+         return res.status(200).json({message:"Last 7 days order",orders});
 
         console.log(orders)
 
