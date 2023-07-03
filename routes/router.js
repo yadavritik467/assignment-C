@@ -1,6 +1,6 @@
 import express from "express"
 import User from "../modal/userModal.js";
-import validateUserInput from "../middleware/authmiddleware.js";
+
 
 const router = express.Router()
 

@@ -1,11 +1,7 @@
 import express from "express";
-import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import authRouter from "./routes/router.js"
-import orderRouter from "./routes/orderRoute.js"
-
-
-
+// import orderRouter from "./routes/orderRoute.js"
 
 const port = 4500;
 const app = express();
@@ -27,7 +23,7 @@ mongoDB()
 
 
 app.use("/auth",authRouter)
-app.use("/order",orderRouter)
+// app.use("/order",orderRouter)
 
 app.get(("/", (req,res)=>{
     res.send("working")
